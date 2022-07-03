@@ -1,18 +1,19 @@
-// existe mas de una clase cuando se encuentra entre llaves {}
-const { Pool } = require('pg')
-const config = require('../config')
+import pkg from 'pg';
+//const { getConnection } = require('');
+const {Pool} = pkg;
+import { db } from '../config.js';
 
-async function getConnection() {
+
+async function getConnection(){
     const client = new Pool({
-        user: config.db.user,
-        host: config.db.host,
-        database: config.db.database,
-        password: config.db.password,
-        port: config.db.port,
+        user: db.user,
+        host: db.host,
+        database: db.database,
+        password: db.password,
+        port: db.port
     });
     await client.connect();
     return client;
-
 }
 
-module.exports = { getConnection };
+export default getConnection;

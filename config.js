@@ -6,7 +6,7 @@ module.exports = {
         user: "postgres",
         host: "localhost",
         database: "CSDB",
-        password: "211099",
+        password: "1234",
         port: "5432",
     }
 }
